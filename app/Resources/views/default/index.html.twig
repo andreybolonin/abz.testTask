@@ -1,6 +1,23 @@
-{% extends 'bootstrap.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Base</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tree</td>
+            <td>List of all employees in the form of a tree</td>
+            <td><a href="{{ path('employee_tree') }}">View</a></td>
+        </tr>
+        </tbody>
+    </table>
 
 {% endblock %}
 
