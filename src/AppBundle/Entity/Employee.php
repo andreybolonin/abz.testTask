@@ -83,7 +83,6 @@ class Employee
      */
     private $children;
 
-
     /**
      * Get id
      *
