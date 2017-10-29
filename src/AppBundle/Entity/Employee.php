@@ -8,7 +8,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @Gedmo\Tree(type="nested")
- * @ORM\Table(name="employees")
  * @ORM\Entity(repositoryClass="Gedmo\Tree\Entity\Repository\NestedTreeRepository")
  */
 class Employee
@@ -16,8 +15,6 @@ class Employee
     use TimestampableEntity;
 
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -25,22 +22,16 @@ class Employee
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string")
      */
     private $position;
 
     /**
-     * @var integer
-     *
      * @ORM\Column(type="integer")
      */
     private $salary;
@@ -170,7 +161,7 @@ class Employee
         return $this->root;
     }
 
-    public function setParent(Employee $parent = null)
+    public function setParent(?Employee $parent)
     {
         $this->parent = $parent;
     }
